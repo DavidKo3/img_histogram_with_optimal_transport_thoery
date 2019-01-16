@@ -1,6 +1,8 @@
 import numpy as np
 import cv2
 import os
+from matplotlib import pyplot as plt
+
 
 root_dir = "../img/"
 filename_lists = os.listdir(root_dir)
@@ -20,6 +22,8 @@ print(query_img.shape)
 
 hist = cv2.calcHist([query_img],[0],None,[256],[0,256])
 print(hist.shape)
+plt.hist(query_img.ravel(), 256, [0, 256])
+plt.show()
 # cv2.imshow('query', query_img)
 cv2.imshow('query-gray', query_img)
 cv2.waitKey(0)
