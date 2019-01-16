@@ -2,7 +2,8 @@ import numpy as np
 import cv2
 import os
 from matplotlib import pyplot as plt
-
+import ot
+import ot.plot
 
 root_dir = "../img/"
 filename_lists = os.listdir(root_dir)
