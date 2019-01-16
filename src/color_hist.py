@@ -10,11 +10,11 @@ filename_lists = os.listdir(root_dir)
 print(filename_lists)
 
 # img_lists = [os.path.join(root_dir, name) for name in filename_lists]
-img_lists = [cv2.imread(os.path.join(root_dir, name), -1) for name in filename_lists]
+img_lists = [cv2.imread(os.path.join(root_dir, name), cv2.IMREAD_COLOR) for name in filename_lists]
 
 
 # print(img_lists)
-query_img = cv2.imread("../img/1.jpg",  -1)
+query_img = cv2.imread("../img/1.jpg",  cv2.IMREAD_COLOR)
 
 
 # print(query_img.shape)
