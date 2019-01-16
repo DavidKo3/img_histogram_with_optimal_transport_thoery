@@ -32,4 +32,25 @@ plt.legend()
 plt.figure(2, figsize=(5, 5))
 ot.plot.plot1D_mat(a, b, M, 'Cost matrix M')
 
+
+
+
+
+# solve EMD
+
+#%% EMD
+
+G0 = ot.emd(a, b, M)
+
+plt.figure(3, figsize=(5, 5))
+ot.plot.plot1D_mat(a, b, G0, 'OT matrix G0')
+
+
+
+
+
+
+
+
+
 plt.show()
