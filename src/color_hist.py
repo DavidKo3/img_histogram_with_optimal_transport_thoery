@@ -5,6 +5,10 @@ from matplotlib import pyplot as plt
 import ot
 import ot.plot
 
+#%% parameters
+
+n = 256  # nb bins
+
 root_dir = "../img/"
 filename_lists = os.listdir(root_dir)
 print(filename_lists)
@@ -23,10 +27,16 @@ print(query_img.shape)
 COLOR = ('b', 'g', 'r')
 
 for ch, col in enumerate(COLOR):
-    histr = cv2.calcHist([query_img], [ch], None, [256], [0,256])
+    histr = cv2.calcHist([query_img], [ch], None, [n], [0, n])
+    print("histr : ", histr.shape)
+    print(histr)
     plt.plot(histr, color=col)
-    plt.xlim([0, 256])
+    plt.xlim([0, n])
+
+
 plt.show()
+
+
 
 
 # cv2.imshow('query', query_img)
