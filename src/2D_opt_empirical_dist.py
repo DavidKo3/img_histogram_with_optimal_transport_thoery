@@ -28,11 +28,6 @@ M /= M.max()
 
 # plot samples
 
-
-print("xs.shape : ", xs.shape)
-print("M.shape : ", M.shape)
-
-
 plt.figure(1)
 plt.plot(xs[:, 0], xs[:, 1], '+b', label='Source samples')
 plt.plot(xt[:, 0], xt[:, 1], 'xr', label='Target samples')
@@ -42,7 +37,7 @@ plt.title("Source and Target dis")
 
 
 plt.figure(2)
-plt.imshow(M, cmap='jet',  interpolation='nearest')
+plt.imshow(M, interpolation='nearest')
 plt.title('Cost matrix M')
 
 #%% EMD
@@ -52,7 +47,7 @@ G0 = ot.emd(a, b, M)
 
 print(G0)
 plt.figure(3)
-plt.imshow(G0, cmap='jet', interpolation='nearest')
+plt.imshow(G0, interpolation='nearest')
 plt.title('OT matrix G0')
 
 
